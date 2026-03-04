@@ -1,3 +1,28 @@
+const createElement = (arr) => {
+    // console.log(arr);
+    const htmlElements = arr.map(el => ` <span class="btn">${el}</span> `)
+    return(htmlElements.join(" "));
+};
+
+const manageLoading= (status)=>{
+    if(status==true){
+        document.getElementById('loading').classList.remove("hidden")
+        document.getElementById('word-container').classList.add("hidden")
+    }else{
+          document.getElementById('word-container').classList.remove("hidden")
+        document.getElementById('loading').classList.add("hidden")
+
+    }
+
+}
+
+
+
+
+
+
+
+
 const loadLessons = () => {
     fetch("https://openapi.programming-hero.com/api/levels/all")
         .then((res) => res.json())
@@ -14,6 +39,7 @@ const removeActive = () => {
 
 
 const loadLevelWord = (id) => {
+    manageLoading(true);
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url)
         .then(res => res.json())
@@ -51,9 +77,9 @@ const displayWordDetails = (word) => {
         </div>
         <div>
             <h1 class="font-bold">synonym</h1>
-            <span class="btn">sny1</span>
-            <span class="btn">sny2</span>
-            <span class="btn">sny3</span>
+            <div class=""> 
+            ${createElement(word.synonyms)}
+            </div>
         </div>
 
      `;
@@ -79,6 +105,7 @@ const displayLevelWord = (words) => {
         <h1 class="font-bangla text-3xl font-bold">নেক্সট Lesson এ যান।</h1>
        </div>
         `;
+        manageLoading(false);
         return;
     }
 
@@ -99,6 +126,7 @@ const displayLevelWord = (words) => {
 
         wordContainer.append(card);
     })
+    manageLoading(false);
 
 }
 
