@@ -87,11 +87,42 @@
             <h1 class="text-4xl font-bold mb-5"><span class="text-sky-500">English</span> Is Easy!!</h1>
             <p class="font-bangla">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে
                 চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+
+
+
+
+            <div class="pt-10 space-y-5">
+               <div>
+                 <label class="input validator">
+                    <input type="email" placeholder="mail@site.com" required />
+                </label>
+               </div>
+
+                <div>
+                    <label class="input validator">
+                    <input type="password" required placeholder="Password" minlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Must be more than 8 characters, including number, lowercase letter, uppercase letter" />
+                </label>
+                </div>
+                <div><button class="btn btn-primary">Get Started</button></div>
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
         <div class="img-container flex-1">
             <img src="./assets/hero-student.png" alt="logo">
         </div>
     </section>
+
 
 
 
@@ -108,19 +139,19 @@
     <!-- Search Bar Section -->
     <section class="flex justify-center pt-20">
         <div class="join">
-  <div>
-    <label  class="input validator join-item">
-      <input id="input-search" type="text" placeholder="Search The Vocabularies" required />
-    </label>
-  </div>
-  <button id="btn-search" class="btn btn-primary join-item">search</button>
-</div>
+            <div>
+                <label class="input validator join-item">
+                    <input id="input-search" type="text" placeholder="Search The Vocabularies" required />
+                </label>
+            </div>
+            <button id="btn-search" class="btn btn-primary join-item">search</button>
+        </div>
     </section>
 
 
     <!-- Loading Section -->
 
-        <section id="loading" class="flex justify-center items-center py-10 hidden">
+    <section id="loading" class="flex justify-center items-center py-10 hidden">
         <span class="loading loading-dots loading-xl"></span>
     </section>
 
